@@ -29,7 +29,7 @@ var body = document.getElementById("gradient");
 
 
 
-// ---------- adding event listener for color inputs, logging them on console ----------
+// ---------- adding event listener for color inputs, changing background gradient ----------
 
 color1.addEventListener("input", function(){
 	body.style.background = 
