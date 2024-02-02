@@ -12,8 +12,10 @@ var body = document.getElementById("gradient");
 
 
 
+
 // ---------- if wanted to change the background to just one color ----------
 // body.style.background = "red";
+
 
 
 
@@ -29,31 +31,47 @@ var body = document.getElementById("gradient");
 
 
 
+
 // ---------- adding event listener for color inputs, changing background gradient ----------
 
-color1.addEventListener("input", function(){
+// color1.addEventListener("input", function(){
+// 	body.style.background = 
+// 	"linear-gradient(to right, " 
+// 	+ color1.value 
+// 	+ " ," 
+// 	+ color2.value 
+// 	+ ")";
+// });
+
+
+// color2.addEventListener("input", function(){
+// 	body.style.background = 
+// 	"linear-gradient(to right, " 
+// 	+ color1.value 
+// 	+ " ," 
+// 	+ color2.value 
+// 	+ ")";
+// });
+
+
+
+
+// ---------- extracting function to adhere to DRY principles (don't repeat yourself) ----------
+
+function setGradient() {
 	body.style.background = 
 	"linear-gradient(to right, " 
 	+ color1.value 
 	+ " ," 
 	+ color2.value 
 	+ ")";
-});
+
+	css.textContent = body.style.background + ";";
+};
 
 
-color2.addEventListener("input", function(){
-	body.style.background = 
-	"linear-gradient(to right, " 
-	+ color1.value 
-	+ " ," 
-	+ color2.value 
-	+ ")";
-});
-
-
-
-
-
+color1.addEventListener("input", setGradient);
+color2.addEventListener("input", setGradient);
 
 
 
